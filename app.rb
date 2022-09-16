@@ -22,8 +22,8 @@ namespace '/api/v1' do
   end
 
   get '/ads' do
-    page = params[:page].to_i || 1
-    ads = Ad.order(:created_at).paginate(page, 2)
+    page = (params[:page] || 1).to_i
+    ads = Ad.order(:created_at).paginate(page, 5)
     result = AdSerializer.new(ads).serializable_hash.to_json
 
     return result
