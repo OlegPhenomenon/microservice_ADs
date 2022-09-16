@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-gem "sinatra"
-gem "puma"
+gem 'sinatra'
+gem 'puma'
 gem 'jsonapi-serializer'
 gem 'sequel'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -14,5 +14,10 @@ gem 'dry-initializer', '~> 3.0.3'
 gem 'dotenv'
 
 group :development, :test do
-  gem "rerun"
+  gem 'rerun'
+end
+
+group :test do
+  gem 'rack-test'
+  gem 'rspec'
 end
