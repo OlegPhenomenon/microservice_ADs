@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'sinatra'
-gem 'puma'
-gem 'jsonapi-serializer'
-gem 'sequel'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'sinatra-contrib'
-gem 'dry-initializer', '~> 3.0.3'
 gem 'dotenv'
+gem 'dry-initializer', '~> 3.0.3'
+gem 'jsonapi-serializer'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma'
+gem 'sequel'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sqlite3'
 
 group :development, :test do
   gem 'rerun'
