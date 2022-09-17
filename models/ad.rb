@@ -4,4 +4,9 @@ class Ad < Sequel::Model
     self.updated_at ||= Time.now
     super
   end
+
+  def after_update
+    self.updated_at ||= Time.now
+    super
+  end
 end
