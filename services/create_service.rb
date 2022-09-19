@@ -13,10 +13,10 @@ class CreateService < BaseService
   def call
     ad = Ad.new(@ad.to_h)
     ad.save
-    wrap([true, ad, nil])
+    wrap(result: true, instance: ad, errors: nil)
   rescue Sequel::NotNullConstraintViolation => e
-    wrap([false, ad, e])
+    wrap(result: false, instance: ad, errors: e)
   rescue Sequel::MassAssignmentRestriction => e
-    wrap([false, ad, e])
+    wrap(result: false, instance: ad, errors: e)
   end
 end
